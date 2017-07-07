@@ -15,12 +15,12 @@ EXPOSE 8990
 #     NSOT_EMAIL
 #     NSOT_SECRET
 
-COPY rootfs/generate-nsot-config.sh /
-COPY rootfs/input.txt /
+COPY rootfs/generate-nsot-configs.sh ~/
+COPY rootfs/input.txt ~/
 COPY rootfs/run.sh /
 
-RUN echo Y | sudo apt-get -y install build-essential python-dev libffi-dev libssl-dev \
-&& echo Y | sudo apt-get --yes install python-pip git 
+RUN apt-get -y install build-essential python-dev libffi-dev libssl-dev \
+&& apt-get --yes install python-pip git 
 
 RUN chmod +x /run.sh
 
