@@ -15,9 +15,8 @@ EXPOSE 8990
 #     NSOT_EMAIL
 #     NSOT_SECRET
 
-COPY rootfs/generate-nsot-config.sh /tmp/
-COPY rootfs/input.txt ~/
-RUN chmod +x /tmp/generate-nsot-configs.sh
+COPY rootfs/generate-nsot-config.sh /
+COPY rootfs/input.txt /
 
 RUN echo Y | sudo apt-get -y install build-essential python-dev libffi-dev libssl-dev \
 && echo Y | sudo apt-get --yes install python-pip git \
@@ -31,7 +30,7 @@ RUN echo Y | sudo apt-get -y install build-essential python-dev libffi-dev libss
 && echo Y | sudo pip install pynsot \ 
 && cd ~/ \
 && sudo nsot-server init \ 
-&& chmod +x /tmp/generate-nsot-configs.sh \
+&& chmod +x ~/generate-nsot-configs.sh \
 && sudo /tmp/generate-nsot-configs.sh $RDS_NAME $RDS_USER $RDS_PASS $RDS_HOST $RDS_PORT \ 
 && cat input.txt | nohup sudo nsot-server start \
 && sleep 1
