@@ -19,8 +19,9 @@ COPY rootfs/generate-nsot-configs.sh ~/
 COPY rootfs/input.txt ~/
 COPY rootfs/run.sh /
 
-RUN apt-get -y install build-essential python-dev libffi-dev libssl-dev \
-&& apt-get --yes install python-pip git 
+RUN apt-get -y update \ 
+&& apt-get -y install build-essential python-dev libffi-dev libssl-dev \
+&& apt-get -y install python-pip git 
 
 RUN chmod +x /run.sh
 
