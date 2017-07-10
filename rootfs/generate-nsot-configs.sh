@@ -5,6 +5,7 @@ export RDS_USER=$2
 export RDS_PASS=$3
 export RDS_HOST=$4
 export RDS_PORT=$5
+export EMAIL=$6
 
 export LOCAL_IP="$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')"
 echo "ITS RUNNING YEAHHHHHHH!!!!"
@@ -13,7 +14,7 @@ echo "ITS RUNNING YEAHHHHHHH!!!!"
 url = http://$LOCAL_IP:8990/api
 auth_header = X-NSoT-Email
 default_domain = localhost
-email = jeremiah.gearheart@pearson.com
+email = $EMAIL
 default_site = 1
 auth_method = auth_header
 EOF
