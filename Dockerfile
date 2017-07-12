@@ -15,13 +15,13 @@ EXPOSE 8990
 #     NSOT_EMAIL
 #     NSOT_SECRET
 
-COPY rootfs/generate-nsot-configs.sh /
-COPY rootfs/input.txt /
-COPY rootfs/run.sh /
+COPY rootfs /
+
 
 RUN apt-get -y update \ 
-&& apt-get -y install build-essential python-dev libffi-dev libssl-dev \
-&& apt-get -y install python-pip git wget
+&& apt-get -y install build-essential python-dev libffi-dev libssl-dev libmysqlclient-dev \
+&& apt-get -y install python-pip git wget mysql-client-core-5.7 \ 
+&& pip -y install nsot pynsot 
 
 RUN chmod +x /run.sh
 RUN chmod +x /generate-nsot-configs.sh
