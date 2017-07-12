@@ -22,6 +22,11 @@ RUN apt-get -y update \
 && apt-get -y install build-essential python-dev libffi-dev libssl-dev libmysqlclient-dev \
 && apt-get -y install python-pip git wget mysql-client-core-5.7 \ 
 && pip install nsot pynsot 
+RUN wget --quiet https://pypi.python.org/packages/40/9b/0bc869f290b8f49a99b8d97927f57126a5d1befcf8bac92c60dc855f2523/mysqlclient-1.3.10.tar.gz  
+RUN tar -xvzf mysqlclient-1.3.10.tar.gz 
+RUN cd mysqlclient-1.3.10 
+RUN python setup.py build 
+RUN python setup.py install 
 
 RUN chmod +x /run.sh
 RUN chmod +x /generate-nsot-configs.sh
