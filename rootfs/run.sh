@@ -9,7 +9,7 @@
  #echo Y | pip install nsot  
  #echo Y | pip install pynsot  
  #echo Y | apt install mysql-client-core-5.7
- cd ~/ 
+ cd / 
  nsot-server init   
  /generate-nsot-configs.sh $RDS_NAME $RDS_USER $RDS_PASS $RDS_HOST $RDS_PORT  
  cat input.txt | nohup nsot-server start & 
