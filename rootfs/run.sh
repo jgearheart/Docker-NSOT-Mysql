@@ -8,9 +8,10 @@
  python setup.py install 
  echo Y | pip install nsot  
  echo Y | pip install pynsot  
+ echo Y | apt install mysql-client-core-5.7
  cd ~/ 
  nsot-server init   
  /generate-nsot-configs.sh $RDS_NAME $RDS_USER $RDS_PASS $RDS_HOST $RDS_PORT  
- echo no | nohup nsot-server start 
+ cat input.txt | nohup sudo nsot-server start & 
  sleep 1
- cat input.txt | nsot-server createsuperuser
+
