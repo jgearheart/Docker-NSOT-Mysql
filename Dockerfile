@@ -21,7 +21,7 @@ COPY rootfs /
 RUN apt-get -y update \ 
 && apt-get -y install build-essential python-dev libffi-dev libssl-dev libmysqlclient-dev \
 && apt-get -y install python-pip git wget mysql-client-core-5.7 \ 
-&& pip -y install nsot pynsot 
+&& pip install nsot pynsot 
 
 RUN chmod +x /run.sh
 RUN chmod +x /generate-nsot-configs.sh
