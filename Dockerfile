@@ -30,4 +30,4 @@ RUN chmod +x /generate-nsot-configs.sh
 
 
 CMD ["/run.sh"]
-RUN nohup nsot-server start &
+
