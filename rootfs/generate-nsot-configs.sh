@@ -8,7 +8,7 @@ export RDS_PORT=$5
 export EMAIL=$6
 
 export LOCAL_IP="$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')"
-echo "ITS RUNNING YEAHHHHHHH!!!!"
+echo "Generating NSOT CONFIGs..."
  cat << EOF > ~/.pynsotrc
 [pynsot]
 url = http://$LOCAL_IP:8990/api
