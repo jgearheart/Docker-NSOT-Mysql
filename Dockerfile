@@ -30,3 +30,4 @@ RUN chmod +x /generate-nsot-configs.sh
 
 
 CMD ["/run.sh"]
+CMD ["nsot-server start &"]
