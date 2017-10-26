@@ -12,7 +12,7 @@
  cd / 
  nsot-server init   
  /generate-nsot-configs.sh $RDS_NAME $RDS_USER $RDS_PASS $RDS_HOST $RDS_PORT  
- /bin/sh -c "nsot-server start & -ignore HUP"
+ nsot-server start & -ignore HUP
  #nsot-server start & 
  sleep 30
 
