@@ -14,10 +14,10 @@
  /generate-nsot-configs.sh $RDS_NAME $RDS_USER $RDS_PASS $RDS_HOST $RDS_PORT 
  sleep 20
  nsot-server start
- sleep 20
- nsot-server start 
- sleep 20
- nsot-server start 
+ #sleep 20
+ #nsot-server start 
+ #sleep 20
+ #nsot-server start 
  
  #nsot-server start & 
  
